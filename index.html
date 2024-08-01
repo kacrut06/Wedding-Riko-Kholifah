@@ -438,6 +438,88 @@ select {
   margin: 5px 0;
 }
 
+/* Styling untuk form */
+.wdp-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk input teks dan textarea */
+.wdp-input, .wdp-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Styling untuk select */
+.wdp-wrap-select {
+  margin-bottom: 15px;
+}
+
+.wdp-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Styling untuk radio button (diubah menjadi select) */
+.wdp-wrap-select select {
+  font-size: 16px;
+}
+
+/* Styling untuk tombol kirim dan batal */
+.wdp-wrap-submit input[type="submit"], .wdp-wrap-submit input[type="button"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.wdp-wrap-submit input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.wdp-wrap-submit input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.wdp-wrap-submit input[type="button"] {
+  background-color: #ccc;
+  color: black;
+}
+
+.wdp-wrap-submit input[type="button"]:hover {
+  background-color: #999;
+}
+
+/* Styling untuk daftar ucapan */
+.wdp-container-comments {
+  list-style: none;
+  padding: 0;
+}
+
+.wdp-container-comments .wdp-comment {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.wdp-comment p {
+  margin: 5px 0;
+}
+
 
 </style>
 <link rel='stylesheet' id='swiper-css' href='https://bynoia.com/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=8.4.5' type='text/css' media='all' />
@@ -456,7 +538,7 @@ select {
 <link rel='stylesheet' id='elementor-icons-fa-regular-css' href='https://bynoia.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=5.15.3' type='text/css' media='all' />
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><script type="text/javascript" id="jquery-core-js-extra">
 /* <![CDATA[ */
-var pp = {"ajax_url":"https:\/\/bynoia.com\/wp-admin\/admin-ajax.php"};
+var pp = {"ajax_url":"https:\/\/sullivan.my.id\/wp-admin\/admin-ajax.php"};
 /* ]]> */
 </script>
 <script type="text/javascript" src="https://bynoia.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
@@ -1359,68 +1441,28 @@ jQuery(document).ready(function($){
 								</div>
 					</div>
 		</section>
-		<section class="elementor-section elementor-inner-section elementor-element elementor-element-5e12d823 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="5e12d823" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-container elementor-column-gap-no">
-			  <div class="elementor-row">
-				<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-21e1970d" data-id="21e1970d" data-element_type="column">
-				  <div class="elementor-column-wrap elementor-element-populated">
-					<div class="elementor-widget-wrap">
-					  <div class="elementor-element elementor-element-2ec69409 animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="2ec69409" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;zoomIn&quot;}" data-widget_type="heading.default">
-						<div class="elementor-widget-container">
-						  <p class="elementor-heading-title elementor-size-default">Wedding Wish</p>
-						</div>
-					  </div>
-					  <div class="elementor-element elementor-element-21f4db77 elementor-widget elementor-widget-weddingpress-commentkit" data-id="21f4db77" data-element_type="widget" data-widget_type="weddingpress-commentkit.default">
-						<div class="elementor-widget-container">
-						  <div id='wdp-wrapper'>
-							<form id="wish-form">
-							  <p class="comment-form-author wdp-field-1">
-								<input id="name" name="name" type="text" aria-required="true" class="wdp-input" placeholder="Nama" required />
-								<span class="wdp-required">*</span>
-							  </p>
-							  <div class="wdp-wrap-textarea">
-								<textarea id="wish" class="wdp-textarea autosize-textarea" name="wish" aria-required="true" placeholder="Ucapan" rows="3" required></textarea>
-								<span class="wdp-required">*</span>
-							  </div>
-							  <div class="wdp-wrap-radio">
-								<p class="comment-form-attendance">
-								  <label><input type="radio" name="attendance" value="hadir" required /> Hadir</label>
-								  <label><input type="radio" name="attendance" value="tidak-hadir" required /> Tidak Hadir</label>
-								  <span class="wdp-required">*</span>
-								</p>
-							  </div>
-							  <div class='wdp-wrap-submit wdp-clearfix'>
-								<p class='form-submit'>
-								  <input name='submit' id='submit' value='Kirim' type='submit' />
-								</p>
-							  </div>
-							</form>
-							<div id="wish-list"></div>
-						  </div>
-						  <script>
-							document.getElementById('wish-form').addEventListener('submit', function(event) {
-							  event.preventDefault();
-							  const name = document.getElementById('name').value;
-							  const wish = document.getElementById('wish').value;
-							  const attendance = document.querySelector('input[name="attendance"]:checked').value;
+		<form id="commentForm" method="post" action="/submit-comment">
+  <label for="author">Nama:</label>
+  <input id="author" name="author" type="text" required placeholder="Nama">
+  
+  <label for="comment">Ucapan:</label>
+  <textarea id="comment" name="comment" required placeholder="Ucapan"></textarea>
+  
+  <label for="attendance">Konfirmasi Kehadiran:</label>
+  <select id="attendance" name="attendance" required>
+    <option value="" disabled selected>Konfirmasi Kehadiran</option>
+    <option value="Hadir">Hadir</option>
+    <option value="Tidak Hadir">Tidak Hadir</option>
+  </select>
+  
+  <button type="submit">Kirim</button>
+</form>
+
+<div id="commentsSection">
+	<?php include 'get-comments.php'; ?>
+  </div>
+  
 		  
-							  const wishList = document.getElementById('wish-list');
-							  const wishItem = document.createElement('div');
-							  wishItem.className = 'wish-item';
-							  wishItem.innerHTML = `<strong>${name}</strong><p>${wish}</p><p><em>Status: ${attendance}</em></p>`;
-							  wishList.appendChild(wishItem);
-		  
-							  document.getElementById('wish-form').reset();
-							});
-						  </script>
-						</div>
-					  </div>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			</div>
-		  </section>
 		  
 				<section class="elementor-section elementor-inner-section elementor-element elementor-element-72d98c0e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="72d98c0e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 						<div class="elementor-container elementor-column-gap-default">
@@ -1619,7 +1661,7 @@ function playAudio(){
 <script type="text/javascript" src="https://bynoia.com/wp-content/plugins/weddingpress/assets/js/exad-scripts.min.js?ver=3.1.8" id="exad-main-script-js"></script>
 <script type="text/javascript" id="wdp_js_script-js-extra">
 /* <![CDATA[ */
-var WDP_WP = {"ajaxurl":"https:\/\/bynoia.com\/wp-admin\/admin-ajax.php","wdpNonce":"3d51b2b829","jpages":"true","jPagesNum":"30","textCounter":"true","textCounterNum":"500","widthWrap":"","autoLoad":"true","thanksComment":"Thanks for your comment!","thanksReplyComment":"Thanks for answering the comment!","duplicateComment":"You might have left one of the fields blank, or duplicate comments","accept":"Accept","cancel":"Cancel","reply":"Reply","textWriteComment":"Ucapan","classPopularComment":"wdp-popular-comment","textToDisplay":"Text to display","textCharacteresMin":"2 characters minimum","textNavNext":"Next","textNavPrev":"Previous","textMsgDeleteComment":"Do you want delete this comment?","textLoadMore":"Load more"};
+var WDP_WP = {"ajaxurl":"https:\/\/sullivan.my.id\/wp-admin\/admin-ajax.php","wdpNonce":"3d51b2b829","jpages":"true","jPagesNum":"30","textCounter":"true","textCounterNum":"500","widthWrap":"","autoLoad":"true","thanksComment":"Thanks for your comment!","thanksReplyComment":"Thanks for answering the comment!","duplicateComment":"You might have left one of the fields blank, or duplicate comments","accept":"Accept","cancel":"Cancel","reply":"Reply","textWriteComment":"Ucapan","classPopularComment":"wdp-popular-comment","textToDisplay":"Text to display","textCharacteresMin":"2 characters minimum","textNavNext":"Next","textNavPrev":"Previous","textMsgDeleteComment":"Do you want delete this comment?","textLoadMore":"Load more"};
 /* ]]> */
 </script>
 <script type="text/javascript" src="https://bynoia.com/wp-content/plugins/weddingpress/addons/comment-kit//js/wdp_script.js?ver=2.7.6" id="wdp_js_script-js"></script>
@@ -1629,7 +1671,7 @@ var WDP_WP = {"ajaxurl":"https:\/\/bynoia.com\/wp-admin\/admin-ajax.php","wdpNon
 <script type="text/javascript" src="https://bynoia.com/wp-content/plugins/weddingpress/addons/comment-kit//js/libs/autosize.min.js?ver=1.14" id="wdp_autosize-js"></script>
 <script type="text/javascript" id="eael-general-js-extra">
 /* <![CDATA[ */
-var localize = {"ajaxurl":"https:\/\/bynoia.com\/wp-admin\/admin-ajax.php","nonce":"377bb2585b","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"eael_translate_text":{"required_text":"is a required field","invalid_text":"Invalid","billing_text":"Billing","shipping_text":"Shipping","fg_mfp_counter_text":"of"},"page_permalink":"https:\/\/bynoia.com\/exclusive-syafira\/","cart_redirectition":"yes","cart_page_url":"","el_breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}};
+var localize = {"ajaxurl":"https:\/\/sullivan.my.id.com\/wp-admin\/admin-ajax.php","nonce":"377bb2585b","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"eael_translate_text":{"required_text":"is a required field","invalid_text":"Invalid","billing_text":"Billing","shipping_text":"Shipping","fg_mfp_counter_text":"of"},"page_permalink":"https:\/\/bynoia.com\/exclusive-syafira\/","cart_redirectition":"yes","cart_page_url":"","el_breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}};
 /* ]]> */
 </script>
 <script type="text/javascript" src="https://bynoia.com/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js?ver=5.8.10" id="eael-general-js"></script>
@@ -1637,8 +1679,8 @@ var localize = {"ajaxurl":"https:\/\/bynoia.com\/wp-admin\/admin-ajax.php","nonc
 <script type="text/javascript" src="https://bynoia.com/wp-content/plugins/powerpack-elements/assets/js/min/frontend-timeline.min.js?ver=2.10.9" id="pp-timeline-js"></script>
 <script type="text/javascript" id="powerpack-frontend-js-extra">
 /* <![CDATA[ */
-var ppLogin = {"empty_username":"Enter a username or email address.","empty_password":"Enter password.","empty_password_1":"Enter a password.","empty_password_2":"Re-enter password.","empty_recaptcha":"Please check the captcha to verify you are not a robot.","email_sent":"A password reset email has been sent to the email address for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.","reset_success":"Your password has been reset successfully.","ajax_url":"https:\/\/bynoia.com\/wp-admin\/admin-ajax.php","show_password":"Show password","hide_password":"Hide password"};
-var ppRegistration = {"invalid_username":"This username is invalid because it uses illegal characters. Please enter a valid username.","username_exists":"This username is already registered. Please choose another one.","empty_email":"Please type your email address.","invalid_email":"The email address isn\u2019t correct!","email_exists":"The email is already registered, please choose another one.","password":"Password must not contain the character \"\\\\\"","password_length":"Your password should be at least 8 characters long.","password_mismatch":"Password does not match.","invalid_url":"URL seems to be invalid.","recaptcha_php_ver":"reCAPTCHA API requires PHP version 5.3 or above.","recaptcha_missing_key":"Your reCAPTCHA Site or Secret Key is missing!","show_password":"Show password","hide_password":"Hide password","ajax_url":"https:\/\/bynoia.com\/wp-admin\/admin-ajax.php"};
+var ppLogin = {"empty_username":"Enter a username or email address.","empty_password":"Enter password.","empty_password_1":"Enter a password.","empty_password_2":"Re-enter password.","empty_recaptcha":"Please check the captcha to verify you are not a robot.","email_sent":"A password reset email has been sent to the email address for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.","reset_success":"Your password has been reset successfully.","ajax_url":"https:\/\/sullivan.my.id\/wp-admin\/admin-ajax.php","show_password":"Show password","hide_password":"Hide password"};
+var ppRegistration = {"invalid_username":"This username is invalid because it uses illegal characters. Please enter a valid username.","username_exists":"This username is already registered. Please choose another one.","empty_email":"Please type your email address.","invalid_email":"The email address isn\u2019t correct!","email_exists":"The email is already registered, please choose another one.","password":"Password must not contain the character \"\\\\\"","password_length":"Your password should be at least 8 characters long.","password_mismatch":"Password does not match.","invalid_url":"URL seems to be invalid.","recaptcha_php_ver":"reCAPTCHA API requires PHP version 5.3 or above.","recaptcha_missing_key":"Your reCAPTCHA Site or Secret Key is missing!","show_password":"Show password","hide_password":"Hide password","ajax_url":"https:\/\/sullivan.my.id\/wp-admin\/admin-ajax.php"};
 var ppCoupons = {"copied_text":"Copied"};
 /* ]]> */
 </script>
@@ -1655,7 +1697,7 @@ wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 </script>
 <script type="text/javascript" id="elementor-pro-frontend-js-before">
 /* <![CDATA[ */
-var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/bynoia.com\/wp-admin\/admin-ajax.php","nonce":"acf7fc2648","urls":{"assets":"https:\/\/bynoia.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/bynoia.com\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/bynoia.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/sullivan.my.id\/wp-admin\/admin-ajax.php","nonce":"acf7fc2648","urls":{"assets":"https:\/\/bynoia.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/bynoia.com\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/bynoia.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
 /* ]]> */
 </script>
 <script type="text/javascript" src="https://bynoia.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.14.1" id="elementor-pro-frontend-js"></script>
@@ -1677,7 +1719,7 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 <script type="text/javascript" src="https://bynoia.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.14.1" id="e-sticky-js"></script>
 <script type="text/javascript" id="weddingpress-wdp-js-extra">
 /* <![CDATA[ */
-var cevar = {"ajax_url":"https:\/\/bynoia.com\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/bynoia.com\/wp-content\/plugins\/weddingpress\/"};
+var cevar = {"ajax_url":"https:\/\/sullivan.my.id\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/bynoia.com\/wp-content\/plugins\/weddingpress\/"};
 /* ]]> */
 </script>
 <script type="text/javascript" src="https://bynoia.com/wp-content/plugins/weddingpress/assets/js/wdp.min.js?ver=3.1.8" id="weddingpress-wdp-js"></script>
